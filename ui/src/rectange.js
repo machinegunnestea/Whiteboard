@@ -4,18 +4,19 @@ class Pos {
     this.y = y;
   }
 }
+
 class Rectangle {
   constructor() {
     this.rects = [];
     this.isDrawing = false;
     this.isMouseDown = false;
     this.mousePos = { x: 0, y: 0 };
-    this.currentRect = undefined;
+    this.currentRect;
   }
 
-  updateMousePosition(pos) {
+  updateMousePosition = (pos) => {
     this.mousePos = pos;
-  }
+  };
 
   draw(ctx) {
     ctx.beginPath();

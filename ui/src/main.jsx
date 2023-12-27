@@ -45,7 +45,7 @@ whiteboard.addEventListener("state_change", (e) => {
 
 const animationLoop = () => {
   if (ctx) {
-    ctx.clearRect(0, 0, 0, 0);
+    ctx.clearRect(0, 0, window.innerWidth, window.outerHeight);
     whiteboard.draw(ctx);
     whiteboard.update();
   }

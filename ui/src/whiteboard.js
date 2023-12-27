@@ -8,13 +8,14 @@ export const Tool = {
   NO_TOOL: 3,
 };
 
-class whiteboard extends EventTarget {
+class Whiteboard extends EventTarget {
   constructor(canvas) {
     super();
     this.activeTool = Tool.NO_TOOL;
     this.mousePos = { x: 0, y: 0 };
     this.pencil = new Pencil();
     this.rectangle = new Rectangle();
+
     let mouseDown = false;
 
     canvas.onmousedown = (e) => {
@@ -63,6 +64,7 @@ class whiteboard extends EventTarget {
     this.pencil.draw(ctx);
     this.rectangle.draw(ctx);
   }
+
   update() {
     if (this.activeTool === Tool.PENCIL) {
       this.pencil.update();
@@ -73,4 +75,4 @@ class whiteboard extends EventTarget {
   }
 }
 
-export default whiteboard;
+export default Whiteboard;
